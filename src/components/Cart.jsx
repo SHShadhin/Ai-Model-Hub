@@ -1,13 +1,17 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Cart = ({ carts, setCarts }) => {
   const totalPrice = carts.reduce((sum, item) => sum + item.price, 0)
   const handlePayment = () => {
     setCarts([]);
+
+    toast.success('Payment Successful')
   }
   const handleDelete = (item) => {
     const filteredCart = carts.filter(c => c.id !== item.id)
     setCarts(filteredCart)
+    toast('Item Remove Successful')
   }
   return (
     <div className="py-10 my-10 max-w-6xl mx-auto px-4">
@@ -19,7 +23,7 @@ const Cart = ({ carts, setCarts }) => {
           <div className="">
             {carts.map(item => (
               <div
-                className="flex justify-between bg-gray-200 items-center p-5 my-5 border-2 rounded-2xl"
+                className="flex flex-col md:flex-row justify-between bg-gray-200 items-center p-5 my-5 border-2 rounded-2xl"
                 key={item.id}
               >
                 <div className="flex gap-4 items-center">
@@ -28,7 +32,7 @@ const Cart = ({ carts, setCarts }) => {
                     src={item.image}
                     alt=""
                   />
-                  <div className='w-150'>
+                  <div className='md:w-150'>
                     <h2 className="text-2xl font-bold">{item.title}</h2>
                     <p>{item.description}</p>
                   </div>
