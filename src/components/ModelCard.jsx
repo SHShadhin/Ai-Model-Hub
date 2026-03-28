@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-const ModelCard = ({model}) => {
-
+const ModelCard = ({ model, carts, setCarts }) => {
   const [isSubscribed, setIsSubscribed] = useState(false);
-  
+  const handleSubscription = () => {
+    setIsSubscribed(true);
+    setCarts([...carts, model])
+  };
   return (
     <div className="shadow-lg rounded-lg border-gray-300 p-6">
       <div className="flex justify-center items-center bg-gray-200 h-56 rounded-lg">
@@ -17,8 +19,8 @@ const ModelCard = ({model}) => {
         </p>
         <h2 className="text-2xl font-bold">${model.price}/month</h2>
         <button
-          onClick={() => setIsSubscribed(true)}
-          className="btn bg-red-500 rounded-lg w-full text-white text-2xl"
+          onClick={handleSubscription}
+          className="btn bg-red-500 py-7 rounded-lg w-full text-white text-2xl"
         >
           {isSubscribed ? 'Subscribed' : 'Subscribe Now'}
         </button>
