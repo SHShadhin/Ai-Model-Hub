@@ -1,6 +1,6 @@
 const NavBar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar md:px-10 px-5">
       <div className="navbar-start">
         <div className="flex items-center gap-1 font-bold text-xl">
           <img className="w-10" src="/logo.png" /> Ai Hub

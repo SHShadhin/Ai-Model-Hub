@@ -13,7 +13,7 @@ const Models = ({ modelsPromise, carts, setCarts }) => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 my-20 max-w-7xl mx-auto">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7 px-5 my-20 max-w-7xl mx-auto">
         {models.map(model => (
           <ModelCard
             key={model.id}

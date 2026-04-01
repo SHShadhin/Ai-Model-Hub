@@ -27,7 +27,7 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab rounded-full w-40"
+          className={`tab rounded-full w-40 ${activeTab === 'model' ? 'bg-red-600 text-white' : 'null'}`}
           aria-label="Models"
           onClick={() => setActiveTab('model')}
           defaultChecked
@@ -35,7 +35,7 @@ function App() {
         <input
           type="radio"
           name="my_tabs_1"
-          className="tab rounded-full w-40"
+          className={`tab rounded-full w-40 ${activeTab === 'cart' ? 'bg-red-600 text-white' : 'null'}`}
           aria-label={`Cart (${carts.length})`}
           onClick={() => setActiveTab('cart')}
         />
